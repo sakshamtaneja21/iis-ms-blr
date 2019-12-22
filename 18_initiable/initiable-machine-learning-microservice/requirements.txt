@@ -1,0 +1,7 @@
+numpy==1.17.4
+Flask==1.1.1
+matplotlib==3.1.1
+pandas==0.25.3
+Flask_Cors==3.0.8
+joblib==0.14.0
+azure_storage==0.36.0

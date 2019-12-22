@@ -1,0 +1,16 @@
+a {
+  color: white;
+  margin: 2%;
+}
+
+.home {
+  color: white
+}
+
+div.text {
+  color: white;
+}
+
+div div.item a {
+  color: black;
+}

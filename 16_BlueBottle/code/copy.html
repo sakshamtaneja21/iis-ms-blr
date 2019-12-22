@@ -1,0 +1,32 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>MapmyIndia Maps: Hello World!</title>
+    <link rel="icon" href="https://www.mapmyindia.com/images/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>  
+    <script type="text/javascript">
+
+
+    </script>
+    
+   <script src="https://apis.mapmyindia.com/advancedmaps/v1/sd8mpkfxtxj7z16xsfdfuezitdzyt62l/map_load?v=1.3"></script>
+   <style>
+   #map  {margin: 0;padding: 0;width: 100%;height: 100%;}
+   </style>
+   <script language="javascript">
+      function init() {
+        var centre = new L.LatLng(28.61, 77.23);
+        map=new MapmyIndia.Map('map',{center:centre,zoomControl: true,hybrid:true });
+        /*1.create a MapmyIndia Map by simply calling new MapmyIndia.Map() and passsing it at the minimum div object, all others are optional...
+          2.all leaflet mapping functions can be called simply on the L object
+          3.MapmyIndia may extend and in future modify the customised/forked Leaflet object to enhance mapping functionality for developers, which will be clearly documented in the MapmyIndia API documentation section.*/
+        var marker=L.marker(centre).addTo(map);/**--add marker at the centre of map--**/
+        marker.bindPopup('Hello World');
+      }
+   </script>
+</head>
+<body onLoad="javascript:init();">
+   <!--1. put your map container here-->
+   <div id="map"></div>
+</body>                                                                                                                          
+</html>

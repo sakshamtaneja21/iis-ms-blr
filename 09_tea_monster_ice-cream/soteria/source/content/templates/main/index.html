@@ -1,0 +1,135 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+    <script>
+            
+        
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            alert ("Geolocation is not supported by this browser.");
+          }
+        }
+        
+        function showPosition(position) {
+            console.log(position.coords.longitude,position.coords.latitutde);
+        }
+        getLocation()
+    </script>
+    <body onload="GetMap()">
+    
+            <div class="wrapper">
+                <!-- Sidebar Holder -->
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Soteria!</h3>
+                        {% trans 'Hi!' %} <b>{{ request.user.username }}</b>.
+                    </div>
+                    <form>
+                    <ul class="list-unstyled components">
+                        <div class="container">
+                            <div class="input-group my-3">
+                                <input type="text" class="form-control" id="start" placeholder="Start" aria-label="Start" aria-describedby="basic-addon2">
+                            </div>              
+                            <div class="input-group my-3">
+                                <input type="text" id="end" class="form-control" placeholder="End" aria-label="End" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <select class="form-control" id="age">
+                                  <option>0-18</option>
+                                  <option>18-40</option>
+                                  <option>more than 40</option>
+                                </select>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="sex">Sex</label>
+                                <select class="form-control" id="sex">
+                                  <option>male</option>
+                                  <option>female</option>
+                                  <option>undisclosed</option>
+                                </select>
+                              </div>
+                        </div>
+                    <ul class="list-unstyled CTAs">
+                        <li>
+                            <a class="download" id="location-submit" style="cursor: pointer;">Submit</a>
+                        </li>
+                    </ul>
+                </form>
+                </nav>
+
+                <!-- Page Content Holder -->
+                <div id="content">
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button type="button" id="sidebarCollapse" class="navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </nav>
+                    
+                    <div id="myMap"></div>
+                    
+                </div>
+            </div>
+
+            <!-- jQuery CDN - Slim version (=without AJAX) -->
+            <script src=" {% static 'js/jquery-3.4.1.min.js' %} " ></script>
+            <!-- Popper.JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').toggleClass('active');
+                        $(this).toggleClass('active');
+                    });
+                    $('#location-submit').on('click', function() {
+                        var start = $('#start').val();
+                        start=start.trim().replace(/\s/g, '%20');
+                        var end = $('#end').val();
+                        end = end.trim().replace(/\s/g, '%20');
+                        var URL = 'https://atlas.microsoft.com/search/address/json?api-version=1.0&subscription-key=oJ4UTtgNZeU4ovsTIvv9ZoGb-DWBwAqHSsAjKktzZdI&query='
+                        var URLStart = URL + start;
+                        var URLEnd = URL + end;
+                        async function fetchAsync (url1, url2) {
+                            let response1 = await fetch(url1);
+                            let data1 = await response1.json();
+                            let response2 = await fetch(url2);
+                            let data2 = await response2.json();
+                            return [data1.results[0], data2.results[0]];
+                        }
+                        fetchAsync(URLStart, URLEnd).then(
+                            data=>GetMap(
+                                data[0].position.lat, data[0].position.lon, data[0].address.freeformAddress,
+                                data[1].position.lat, data[1].position.lon, data[1].address.freeformAddress)
+                        )
+                    });
+                });
+                console.log(position.coords.longitude,position.coords.latitutde);
+
+</script>
+            
+            
+        </body>
+
+        </html>
+    {% else %}
+
+        {% trans 'You are a guest.' %}
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+.Header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 30px;
+  border-bottom: 1px solid #cecece;
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #fefefe;
+  z-index: 2;
+}
+.Nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-basis: 55%;
+}
+.NavItem{
+  cursor: pointer;
+  font-size: 20px;
+  /* color: #009688b0; */
+  /* font-weight: 600; */
+}

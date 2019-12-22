@@ -1,0 +1,7 @@
+#root > div > div:nth-child(2) > center > div > a{
+    color: black
+}
+
+#root > div > div:nth-child(2) > center > div > a:hover{
+    color: blue
+}

@@ -1,0 +1,21 @@
+.MainContent{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.MainHeading{
+  font-size: 3.6em;
+  /* color: #fc642d; */
+}
+.BtnGroup{
+  padding: 15px;
+}
+.Btn{
+  background-color: #00a699;
+  width: 250px;
+  height: 48px;
+  margin: 10px;
+}

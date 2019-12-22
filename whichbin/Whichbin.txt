@@ -1,0 +1,101 @@
+Project: Whichbin.
+#################################################################
+Description: Which waste to which bin.
+#################################################################
+Contents of the Project Directory:
+
+├── config
+├── controllers
+├── models
+├── node_modules
+│   └── @babel
+│       ├── generator
+│       │   ├── lib
+│       │   │   ├── generators
+│       │   │   └── node
+│       │   └── node_modules
+│       │       └── source-map
+│       │           ├── dist
+│       │           └── lib
+│       ├── highlight
+│       │   ├── lib
+│       │   └── node_modules
+│       │       ├── ansi-styles
+│       │       ├── chalk
+│       │       │   └── types
+│       │       ├── color-convert
+│       │       ├── color-name
+│       │       ├── has-flag
+│       │       └── supports-color
+│       ├── parser
+│       │   ├── bin
+│       │   ├── lib
+│       │   └── typings
+│       ├── traverse
+│       │   ├── lib
+│       │   │   ├── path
+│       │   │   │   ├── inference
+│       │   │   │   └── lib
+│       │   │   └── scope
+│       │   │       └── lib
+│       │   └── node_modules
+│       │       ├── debug
+│       │       │   ├── dist
+│       │       │   └── src
+│       │       ├── globals
+│       │       └── ms
+│       └── types
+│           ├── lib
+│           │   ├── asserts
+│           │   │   └── generated
+│           │   ├── builders
+│           │   │   ├── flow
+│           │   │   ├── generated
+│           │   │   └── react
+│           │   ├── clone
+│           │   ├── comments
+│           │   ├── constants
+│           │   │   └── generated
+│           │   ├── converters
+│           │   ├── definitions
+│           │   ├── modifications
+│           │   │   └── flow
+│           │   ├── retrievers
+│           │   ├── traverse
+│           │   ├── utils
+│           │   │   └── react
+│           │   └── validators
+│           │       ├── generated
+│           │       └── react
+│           ├── node_modules
+│           │   └── to-fast-properties
+│           └── scripts
+│               ├── generators
+│               └── utils
+├── public
+│   ├── css
+│   │   └── themes
+│   │       ├── default
+│   │       ├── flatly
+│   │       └── modern
+│   └── js
+│       ├── lib
+│       └── model
+├── test
+├── uploads
+└── views
+    ├── account
+    ├── api
+    └── partials
+#################################################################
+How to run the app?
+
+1.<Project_folder>$ npm install
+
+2. create .env.example file and add following code:
+    PORT: 3000
+    MONGODB_URI:<MONGODB URL>
+
+3. run the command node app.js
+
+4. Access the app running in the http://localhost:3000

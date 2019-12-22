@@ -1,0 +1,12 @@
+.ProductDetails{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  max-width: 800px;
+}
+.ProductStep{
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}

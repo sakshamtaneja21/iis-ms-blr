@@ -1,0 +1,7 @@
+*,body{
+  padding: 0;
+  margin: 0;
+}
+.MuiDialog-paper{
+  height: 400px;
+}

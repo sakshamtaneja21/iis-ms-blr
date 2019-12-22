@@ -1,0 +1,35 @@
+{
+  "name": "template-crud-login",
+  "version": "1.0.0",
+  "description": "basic crud operation and login/logout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "npm install --prefix client",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Alive-Kiwi/crud-login-template.git"
+  },
+  "author": "Prateek Jaiswal (Alive-Kiwi)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alive-Kiwi/crud-login-template/issues"
+  },
+  "homepage": "https://github.com/Alive-Kiwi/crud-login-template#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "azure-storage": "^2.10.3",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.2",
+    "validator": "^12.1.0"
+  }
+}

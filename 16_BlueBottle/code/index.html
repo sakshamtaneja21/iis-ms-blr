@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- head -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BlueBottle</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="mmi.css" rel="stylesheet">
+
+   <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+   <!--<script src="https://apis.mapmyindia.com/advancedmaps/v1/sd8mpkfxtxj7z16xsfdfuezitdzyt62l/map_load?v=1.3&plugin=geoanalytics"></script>-->
+   <script src="https://apis.mapmyindia.com/advancedmaps/v1/i7iwozubjtrarts88akjdb493k4b9b73/map_load?v=1.3&plugin=geoanalytics"></script>
+   <script type="text/javascript" src="mmi.js"></script>
+
+</head>
+
+<body id="page-top" onLoad="init();">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+        <a class="navbar-brand mr-1" href="index.html">BlueBottle</a>
+
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </nav>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link">
+		    <button type="button" class="btn btn-primary btn-block" onClick="add_layer()">Add Dist</button>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link">
+		    <button type="button" class="btn btn-primary btn-block" onClick="add_subDist()">Add SubDist</button>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link">
+		    <button type="button" class="btn btn-primary btn-block" onClick="add_block()">Add Block</button>
+                </a>
+            </li>
+	    <li class="nav-item active">
+		   	    </li>
+
+            <li class="nav-item active">
+                <a class="nav-link">
+		    <button type="button" class="btn btn-primary btn-block" onClick="start_analysis()">Analyse</button>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link">
+		    <button type="button" class="btn btn-primary btn-block" onClick="add_rainfall()">Rainfall</button>
+                </a>
+            </li>
+        </ul>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+		    <div class="row">
+                    <div class="col-xl-3 col-sm-6 mb-3">
+		    <div class="btn-group">
+			    <button type="button" class="btn btn-info" id="drop_down_button">Town</button>
+			    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    <span class="sr-only">Toggle Dropdown</span>
+			    </button>
+			    <div class="dropdown-menu">
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(1)">HALIYAL</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(2)">MUTGA</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(3)">RAMANAGARA</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(4)">MYSORE</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(5)">MADIKERI</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(6)">MANGALORE</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(7)">HASSAN</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(8)">BBMP</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(9)">SARJAPURA</span></a>
+				    <a class="dropdown-item" href="#"><span onClick="dropdown_clicked(10)">MUTGA</span></a>
+			    </div>
+		    </div>
+		    </div>
+		    </div>
+
+                <!-- Breadcrumbs-->
+                <!--<ol class="breadcrumb">-->
+                    <!--<li class="breadcrumb-item">-->
+                        <!--<a href="#">Dashboard</a>-->
+                    <!--</li>-->
+                    <!--<li class="breadcrumb-item active">Overview</li>-->
+                <!--</ol>-->
+
+               <!-- Icon Cards-->
+                <div class="row">
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bg-primary o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-comments"></i>
+                                </div>
+                                <div class="mr-5">Near by Cities</div>
+                                <div class="mr-5" id='total'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bg-danger o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-life-ring"></i>
+                                </div>
+                                <div class="mr-5">Red Alerted Cities</div>
+                                <div class="mr-5" id='red_alert'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bg-warning o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-list"></i>
+                                </div>
+                                <div class="mr-5">Secondary level Cities</div>
+                                <div class="mr-5" id='secondary'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card text-white bg-secondary o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-shopping-cart"></i>
+                                </div>
+                                <div class="mr-5">Safe cities</div>
+                                <div class="mr-5" id='safe'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+		<div class="row">
+		<div class="col-xl-12">
+			<div id="map" style="width:100%; height: 8in;">
+			</div>
+		</div>
+		</div>
+		<!--<div height="30" width="30" id="map"></div>-->
+
+            </div>
+            <!-- /.container-fluid -->
+
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright © BlueBottle 2019</span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+</body>
+
+</html>

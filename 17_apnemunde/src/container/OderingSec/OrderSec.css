@@ -1,0 +1,17 @@
+.OrderSec{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  
+  max-width: 900px;
+  /* height: 400px; */
+  padding: 40px 0px;
+
+}
+
+.ChildTextItem{
+  flex-basis: 95%;
+}

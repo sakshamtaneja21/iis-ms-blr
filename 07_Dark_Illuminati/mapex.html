@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"lang="en" xml:lang="en">
+    <head>
+        <title>TravelDiaries</title>
+        <link rel="icon" href="http://mapmyindia.com/images/favicon.ico" type="image/x-icon">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <style type="text/css">
+            html { height: 100%; }
+            body { background-color: #494848; height: 100%;font-family:Verdana,sans-serif, Arial;color:#000;margin: 0; font-size:14px; padding: 0; }
+             #map {
+                position: absolute;
+                left: 310px; top: 44px; 
+                right: 0px; bottom: 0px; 
+                border: 0px solid #cccccc; }
+            #result {
+                position: absolute;
+                left: 0px; top: 44px;
+                width: 309px;
+                bottom: 0px; 
+                border: 0px solid #494848;
+                background-color: rgb(49, 48, 48);
+                overflow: auto;
+            }
+             button{width: 220px;font-family:Brushstroke, fantasy;font-size:12px;padding:10px; letter-spacing: 2px; color:rgb(0, 0, 0)}
+            button.b{background-color: #dacccc; border:0px; border-radius: 50px 100px 50px 100px;}
+        </style>
+        <link rel="stylesheet" href="css/leaflet.css" />
+        <!--put your map api javascript url with key here-->
+        <script src="https://apis.mapmyindia.com/advancedmaps/v1/q61xviitlp8vq1snu9upfkoxqhox73e9/map_load?v=1.3"></script>
+        
+    </head>
+    <body>
+        <div style="border-bottom: 0px solid rgb(117, 113, 113);background-color: rgb(173, 173, 173); padding:10px 12px;"><span style="font-size: 20px">Travel Diaries</span><span style="font-size:16px;color:#777">Explore and let Friends Explore</span></div>
+            
+<div id="result">
+            <h3 style="padding-left:10px; color:aquamarine;">HEY!, Wanderer</h3>
+            <div style="padding: 10px 12px 6px 38px"><button onclick="location.href='addfriend.html'" class='b' style="width: 220px; ">Add Friend</button></div>
+            <div style="padding: 25px 12px 6px 38px;"><button onclick="location.href='Travelmate.html'" class='b' style="width: 220px;">Travel Mate</button></div>
+            <div style="padding: 25px 12px 6px 38px;"><button onclick="location.href='YourDiary.html'" class='b' style="width: 220px;">Your Diary</button></div>
+            <h3 style="padding-left:10px;">Note:</h3>
+            <p style="padding:5px 14px 6px 14px;text-align:justify; color:azure">Add a place you visited and share your expericence and we offer you a coupon which can be reedemmed from our partners on your next trip</p>
+        </div>
+        <div id="map"></div>
+        <script>
+                var map=new MapmyIndia.Map("map",{ center:[21.0000, 78.0000],zoomControl: true,hybrid:false,zoom:5 });
+        </script>
+    </body>
+</html>
