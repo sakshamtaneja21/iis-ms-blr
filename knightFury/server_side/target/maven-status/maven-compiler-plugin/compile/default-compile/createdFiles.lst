@@ -1,0 +1,16 @@
+com/quoram/quoram/Controllers/QueryController.class
+com/quoram/quoram/Services/ServicesInterface/TeacherServices.class
+com/quoram/quoram/DAO/QueryRepository.class
+com/quoram/quoram/QuoramApplication.class
+com/quoram/quoram/Services/ServicesImpl/StudentServicesImpl.class
+com/quoram/quoram/Services/ServicesImpl/TeacherServicesImpl.class
+com/quoram/quoram/Entity/Student.class
+com/quoram/quoram/DAO/StudentRepository.class
+com/quoram/quoram/ServletInitializer.class
+com/quoram/quoram/DAO/TeacherDAOImpl.class
+com/quoram/quoram/Entity/Query.class
+com/quoram/quoram/DAO/TeacherRepository.class
+com/quoram/quoram/Controllers/StudentController.class
+com/quoram/quoram/Entity/Teacher.class
+com/quoram/quoram/Controllers/TeacherController.class
+com/quoram/quoram/Services/ServicesInterface/StudentServices.class
