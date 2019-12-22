@@ -1,0 +1,45 @@
+Theme : MAPMYINDIA
+
+Topic : Emergency Service
+
+Domains: 1)Women Safety
+         2) Car crash Savior
+
+
+1) Women Safety
+
+Pre- existing apps: features not provided = alerting by voice and notification to the nearby police station and power of voice to trigger.
+
+MapMyIndia APIs used: nearby API, geocode API, routing API
+
+CRUX: 1) IMEI number   2)Nearby Police Stations     3) Illeterate people also taken into considering using the NLP engine
+
+Pre- Emergency Situations:
+1) Real-time crowd density of a place
+2) Patroling Activity, Street Light etc.
+
+
+Market Viability:
+
+CROWD density
+Understanding how many people pass by a given location at a given time helps urban planners to better understand and meet people's’ needs:
+
+1) Helps the business know the popularity of a particular place
+
+2) Allows them to know the insights of a place through which they can know about the needs of the crowd in that particular region.
+
+3) Helps them understand crowd flow at large-scale events and where to position different amenities like food stalls, parking in case of large gathering events.
+
+
+Car Crash Savior:
+
+Around 3 Lakh car accident victims die every year because of the late response in getting medical attention.
+
+Every 1 minute delay in response time correlates to a six percent difference in number of lives saved.
+
+CRUX:
+
+1)Reduced the time to the shortest extent possible by using automated service and removing middlemen.
+
+2) Car acts in the post crash scenario (which can be addded as a market feature for the current automobile industry).
+
