@@ -1,0 +1,16 @@
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Controllers/StudentController.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Entity/Teacher.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Services/ServicesImpl/TeacherServicesImpl.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Entity/Query.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Controllers/TeacherController.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Services/ServicesImpl/StudentServicesImpl.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/ServletInitializer.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/DAO/StudentRepository.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/DAO/TeacherDAOImpl.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/QuoramApplication.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Services/ServicesInterface/StudentServices.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/DAO/TeacherRepository.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Services/ServicesInterface/TeacherServices.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Entity/Student.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/Controllers/QueryController.java
+/Users/srajolia/Documents/Heller/Work/Hackathons/Innov8 Microsoft()Quoram/quoram/src/main/java/com/quoram/quoram/DAO/QueryRepository.java
