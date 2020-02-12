@@ -1,4 +1,5 @@
-Django==2.2.4
+-i https://pypi.python.org/simple/
 django-bootstrap4==0.0.8
-pytz==2019.2
+django==2.2.10
+pytz==2019.3
 sqlparse==0.3.0
